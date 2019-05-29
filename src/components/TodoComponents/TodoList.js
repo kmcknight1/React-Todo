@@ -5,7 +5,7 @@ import './Todo.css';
 const TodoList = (props) => {
 
         return (
-            <ul>
+            <div className='list'>
             {props.todos.map(todo => (
                 <Todo 
                 handleToggleTodo={props.handleToggleTodo}
@@ -13,7 +13,7 @@ const TodoList = (props) => {
                 todo={todo}
                 />
             ))}
-            </ul>
+            </div>
         )
 }
 

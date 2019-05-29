@@ -3,7 +3,7 @@ import './Todo.css';
 
 const TodoForm = (props) => {
         return (
-            <form>
+            <form className='form'>
                 <input 
                   onChange={props.handleChangeTodo}
                   type='text' 

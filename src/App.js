@@ -2,6 +2,11 @@ import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
 
+// import { createGlobalStyle, ThemeProvider } from "styled-components";
+// import { reset, themes, List, ListItem, Divider } from "react95";
+
+// const ResetStyles = createGlobalStyle`${reset}`;
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -56,7 +61,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
+        <div className='inner-container'>
         <h2>My To-Do List</h2>
         <TodoList todos={this.state.todos} handleToggleTodo={this.toggleTodo} />
         <TodoForm value={this.state.todo} 
@@ -64,6 +70,7 @@ class App extends React.Component {
           handleChangeTodo={this.changeTodo} 
           handleDeleteTodo={this.deleteTodo}
           />
+      </div>
       </div>
     );
   }
