@@ -5,14 +5,14 @@ import './Todo.css';
 const TodoList = (props) => {
 
         return (
-            <ul>
+            <div>
             {props.todos.map(todo => (
                 <Todo 
                 key={todo.id}
                 todo={todo}
                 />
             ))}
-            </ul>
+            </div>
         )
 }
 
