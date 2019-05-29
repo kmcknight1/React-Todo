@@ -5,14 +5,15 @@ import './Todo.css';
 const TodoList = (props) => {
 
         return (
-            <div>
+            <ul>
             {props.todos.map(todo => (
                 <Todo 
+                handleToggleTodo={props.handleToggleTodo}
                 key={todo.id}
                 todo={todo}
                 />
             ))}
-            </div>
+            </ul>
         )
 }
 

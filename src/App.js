@@ -34,12 +34,36 @@ class App extends React.Component {
     this.setState({[event.target.name]: event.target.value})
   }
 
+  toggleTodo = (id) => {
+    let todos = this.state.todos.slice();
+    todos = todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+        return todo;
+      } else {
+        return todo;
+      }
+    })
+    this.setState({ todos })
+    console.log(todos)
+  }
+
+  deleteTodo = (event) => {
+    event.preventDefault();
+    let todos = this.state.todos.filter(todo => !todo.completed)
+    this.setState({ todos })
+  }
+
   render() {
     return (
       <div>
         <h2>My To-Do List</h2>
-        <TodoList todos={this.state.todos}/>
-        <TodoForm value={this.state.todo} handleAddTodo={this.addTodo} handleChangeTodo={this.changeTodo} />
+        <TodoList todos={this.state.todos} handleToggleTodo={this.toggleTodo} />
+        <TodoForm value={this.state.todo} 
+          handleAddTodo={this.addTodo} 
+          handleChangeTodo={this.changeTodo} 
+          handleDeleteTodo={this.deleteTodo}
+          />
       </div>
     );
   }
